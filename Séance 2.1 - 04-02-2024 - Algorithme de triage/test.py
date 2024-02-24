@@ -74,20 +74,3 @@ def test_lower_than_x():
     assert exercice.lower_than_x([1, 2, 3, 4], 5) == 0
     assert exercice.lower_than_x([4, 2, 3, 2], 3) == 1
     assert exercice.lower_than_x([6, 9, 3], 2) == -1
-
-
-def main():
-    test_trace()
-    test_count_negative()
-    test_sum_positive()
-    test_symetrique()
-    test_antisymetrique()
-    test_matric_product()
-    test_ne_triangle()
-    test_ne_triangle_numbers()
-    test_tri_selection()
-    test_lower_than_x()
-
-
-if __name__ == '__main__':
-    main()
