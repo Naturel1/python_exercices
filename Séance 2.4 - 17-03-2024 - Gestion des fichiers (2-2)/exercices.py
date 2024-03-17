@@ -36,11 +36,20 @@ def crypt_simple() -> None:
             for line in f2:
                 _line = unidecode(line)
                 crypted_line = ""
+                print(_line)
                 for letter in _line:
-                    pass
-                    # TODO: continuer a partir d'ici
-                    # crypted_line +=
-            print(crypted_line)
+                    if letter in string.ascii_letters:
+                        if letter == 'z':
+                            _letter = 'a'
+                        elif letter == 'Z':
+                            _letter = 'A'
+                        else:
+                            code_ascii = ord(letter)
+                            _letter = chr(code_ascii + 1)
+                        crypted_line += _letter
+                    else:
+                        crypted_line += letter
+                f1.write(crypted_line)
 
 
 def ex_1():
