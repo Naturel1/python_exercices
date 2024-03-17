@@ -64,6 +64,7 @@ def ex_1():
     crypt_simple()
 
 
+
 def main():
     ex_1()
 
