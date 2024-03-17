@@ -124,19 +124,36 @@ def verif_password(password):
     return info
 
 
-def find_info(file) -> bool:
+def find_info(file: str) -> dict:
     """
     find in the file the minimum, maximum and average of the data
     :param file:
     :return:
     """
-    with open(file, "r", encoding='utf-8') as f:
-        info: list = f.readline()[::-1].split("\t")
-        print(info)
+    result: dict = {"max": "", "min": "", "max_value": 0, "min_value": 1000000, "average": 0}
+    with open(file, "r", encoding="utf-16") as f:
+        f.readline()
+        counter: int = 0
+        for x in f:
+            counter += 1
+            info = x.replace("\n", "").split("\t")
+            if float(info[-1].replace(",", ".")) < result["min_value"]:
+                result["min_value"] = float(info[-1].replace(",", "."))
+                result["min"] = info[2]
+            elif float(info[-1].replace(",", ".")) > result["max_value"]:
+                result["max_value"] = float(info[-1].replace(",", "."))
+                result["max"] = info[2]
+            result["average"] += float(info[-1].replace(",", "."))
+        result["average"] = result["average"] / counter
+    return result
 
+
+
+
+        #sel replace minecraft:deepslate minecraft:tuff minecraft:granite minecraft:andesite minecraft:diorite minecraft:gravel minecraft:dirt minecraft:cobbled_deepslate minecraft:moss_block minecraft:air
 
 def main():
-    find_info("./ods087.txt")
+    print((find_info("./ods087.txt")))
 
 
 if __name__ == "__main__":

@@ -59,3 +59,6 @@ def test_verif_password():
     assert verif_password("$azerty1234$") == {"minusule": True, "majuscule": False, "chiffre": True, "caractere": True}
     assert verif_password("") == {"minusule": False, "majuscule": False, "chiffre": False, "caractere": False}
     assert verif_password("AzErTy123€") == {"minusule": True, "majuscule": True, "chiffre": True, "caractere": True}
+
+def test_find_info():
+    assert find_info("./ods087.txt") == {'max': 'Belgium', 'min': 'Walloon-Brabant', 'max_value': 8887.411, 'min_value': 161.118, 'average': 1882.7808571429218}
