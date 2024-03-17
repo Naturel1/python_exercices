@@ -1,0 +1,6 @@
+2023-01-15 08:30:00 - Connexion réussie
+2023-01-15 09:45:12 - Envoi d'un e-mail
+2023-01-16 12:20:30 - Erreur serveur 500
+2023-01-17 14:10:05 - Modification du mot de passe
+2023-01-18 10:05:40 - Téléchargement du fichier
+2023-01-18 15:30:22 - Déconnexion
