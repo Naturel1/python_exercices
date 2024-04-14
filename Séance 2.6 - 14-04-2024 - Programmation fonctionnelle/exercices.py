@@ -57,7 +57,6 @@ def filter_dico(x: dict, index) -> set:
 def count_palindrome(x: list[str]) -> int:
     def is_palindrome(y: str) -> bool:
         for i in range(len(y) // 2):
-            print(y[i], y[-i - 1])
             if y[i] != y[-i - 1]:
                 return False
         return True
@@ -70,6 +69,3 @@ def factorial(x: int) -> int:
     if x == 0:
         return 1
     return reduce(lambda i, j: i * j, range(1, x + 1))
-
-
-# ex 13
